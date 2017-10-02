@@ -12,12 +12,13 @@ import android.widget.Button;
 import android.view.Menu;
 import android.widget.Toast;
 
-public class FirstActivity extends AppCompatActivity {
+public class FirstActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
+        Log.d("FirstActivity",this.toString());
         setContentView(R.layout.first_layout);
         Button button1=(Button)findViewById(R.id.button_1);
         button1.setOnClickListener(new View.OnClickListener() {
@@ -25,9 +26,9 @@ public class FirstActivity extends AppCompatActivity {
             public void onClick(View v) {
             /*Toast.makeText(FirstActivity.this,"you click button1",Toast.LENGTH_SHORT).
             show();*/
-            String data="hello SecondActivity";
+            //String data="hello SecondActivity";
                 Intent intent=new Intent(FirstActivity.this,SecondActivity.class);
-                startActivityForResult(intent,1);
+                //startActivityForResult(intent,1);
                 //intent.putExtra("extra_data",data);
              /*Intent intent=new Intent(Intent.ACTION_VIEW);
                 intent.setData(Uri.parse("http:www.baidu.com"));*/
