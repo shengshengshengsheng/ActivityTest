@@ -6,7 +6,7 @@ import android.widget.Button;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-public class SecondActivity extends AppCompatActivity {
+public class SecondActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,10 +18,11 @@ public class SecondActivity extends AppCompatActivity {
             @Override
             public void onClick(View v)
             {
-                Intent intent=new Intent();
-                intent.putExtra("data_return","Hello FirstActivity");
-                setResult(RESULT_OK,intent);
-                finish();
+                Intent intent=new Intent(SecondActivity.this,FirstActivity.class);
+                //intent.putExtra("data_return","Hello FirstActivity");
+                //setResult(RESULT_OK,intent);
+                //finish();
+                startActivity(intent);
             }
 
         });
